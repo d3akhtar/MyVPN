@@ -1,6 +1,0 @@
-[MyServer]
-MEDIA=rastapi
-Port=VPN2-0
-Device=WAN Miniport (IKEv2)
-DEVICE=vpn
-PhoneNumber=fr200.vpnbook.com
