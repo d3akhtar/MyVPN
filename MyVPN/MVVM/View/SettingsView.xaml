@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="MyVPN.MVVM.View.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyVPN.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#1e1e1e">
+    <Border Background="#222222"
+            Margin="125,25,125,25"
+            Padding="40,25,40,25"
+            CornerRadius="5"
+            BorderBrush="Gray"
+            BorderThickness="0.5">
+        <StackPanel VerticalAlignment="Top">
+            <TextBlock Text="Settings"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left"
+               Foreground="LightGray"
+               FontSize="32"
+               FontWeight="Bold"
+               Margin="0,0,0,20"/>
+            <CheckBox Content="Disconnect On Close" 
+              IsChecked="{Binding Path=Settings.DisconnectOnClose, UpdateSourceTrigger=PropertyChanged}"/>
+            <CheckBox Content="Show Terminal Window" 
+              IsChecked="{Binding Path=Settings.ShowTerminalWindowForProcess, UpdateSourceTrigger=PropertyChanged}"/>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,20,0,0">
+                <TextBlock Foreground="White"
+                           Margin="3"
+                           Text="Password: "
+                           FontSize="14"
+                           FontWeight="Medium"/>
+                <TextBox Text="{Binding Settings.Password, UpdateSourceTrigger=PropertyChanged}"
+                         Padding="5"
+                         VerticalAlignment="Center"
+                         Margin="10,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical"
+                        Margin="0,30,0,0">
+                <Button Content="Reload Pbk Files"
+                        Background="#473805"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Width="125"
+                        Height="35"
+                        Command="{Binding ReloadPbkFiles}"/>
+                <TextBlock Text="If there are too many pbk files, or if the usernames/addresses are wrong, click this button to rewrite all the pbk files."
+                           Foreground="White"
+                           Width="250"
+                           Height="50"
+                           Margin="0,4,0,0"
+                           HorizontalAlignment="Left"
+                           TextWrapping="Wrap"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>
