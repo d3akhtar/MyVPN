@@ -6,7 +6,7 @@ on:
         - "myvpn/v*"
 
 env:
-    PROJECT_PATH: ./MyVPN.csproj
+    PROJECT_PATH: MyVPN/MyVPN.csproj
 
 jobs:
     deploy:
